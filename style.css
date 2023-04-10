@@ -212,7 +212,7 @@ section ul li {
   user-select: none;
 }
 
-section ul li[active] {
+section ul li[data-active] {
   box-shadow: 0 0 0 2px #8257E5;
   background-color: #8257E5;
 }
