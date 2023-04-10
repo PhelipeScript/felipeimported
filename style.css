@@ -61,12 +61,12 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 200px 1fr;
   grid-template-rows: 100px 1fr 80px;
   grid-template-areas: 
-  'aside header'
-  'aside main'
-  'aside footer';
+  'section header'
+  'section main'
+  'section footer';
   width: 100vw;
   min-height: 100vh;  
 }
@@ -93,8 +93,15 @@ header {
 }
 
 header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #8257E5;
   font-size: 2rem;
+}
+
+header h1 img {
+  width: 32px;
 }
 
 main {
@@ -118,7 +125,7 @@ main h2 {
   margin: 0 10px;
   gap: 15px;
   place-items: center;
-  box-shadow: 0 1px 0 0 #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
 }
 
 .successShoes {
@@ -139,28 +146,163 @@ main h2 {
   width: 100%;
 }
 
-@keyframes delayAside {
+@keyframes delaySection {
   0% {
-    display: none;
+    position: static;
   }
   100% {
-    display: block;
+    position: fixed;
   }
 }
 
-aside {
-  grid-area: aside;
-  width: 150px;
+section {
+  grid-area: section;
+  width: 200px;
   height: 100%;
+  padding: 10px;
   box-shadow: 0 0 1px 0 #c6c6c6;
   background-color: #2c2c2c;
-  animation: delayAside 0.5s 1.7s linear forwards;
+  animation: delaySection 0.5s 1.3s linear forwards;
+}
+
+@keyframes delayDiv {
+  0% {
+    position: static;
+  }
+  100% {
+    position: relative;
+  }
+}
+
+section > div {
+  height: 100%;
+  animation: delayDiv 0.5s 1.3s linear forwards;
+}
+
+section > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+section > div > div img {
+  width: 32px;
+  align-self: start;
+}
+
+section > div > div h2 {
+  color: #c6c6c6;
+  font-size: 1.5rem;
+  line-height: 140%;
+}
+
+section ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+}
+
+section ul li {
+  box-shadow: 0 2px 0 0 #8257E5;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+section ul li[active] {
+  box-shadow: 0 0 0 2px #8257E5;
+  background-color: #8257E5;
+}
+
+section ul li:hover, section ul li:focus {
+  background-color: #8257E5;
+  box-shadow: 0 0 0 2px #8257E5;
+  transition: box-shadow 0.2s ease;
+}
+
+section ul li:active {
+  background-color: #242526;
+  box-shadow: 0 0 0 2px #242526;
+}
+
+section ul li a {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  color: #c6c6c6;
+  font-size: 1rem;
+  line-height: 160%;
+  text-decoration: none;
+}
+
+section ul li a:hover {
+  color: #fff;
+}
+
+@keyframes delayLogOut {
+  0% {
+    position: static;
+  }
+  100% {
+    position: absolute;
+  }
+}
+
+.logOut {
+  text-decoration: none;
+  animation: delayLogOut 0.5s 1.3s linear forwards;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  box-shadow: 0 0 0 2px #c6c6c6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logOut:focus, .logOut:hover {
+  box-shadow: 0 0 0 2px #DB4437;
+}
+
+.logOut img {
+  width: 24px;
+}
+
+.logOutBG {
+  width: 180px;
+  height: 45px;
+  position: fixed;
+  left: 10px;
+  z-index: -1;
+}
+
+@keyframes bgMovement {
+  0% {
+    background-color: #DB4437;
+    width: 0px;
+  }
+
+  100% {
+    background-color: #DB4437;
+    width: 180px;
+  }
+}
+
+.logOut:focus .logOutBG {
+  animation: bgMovement 1s ease forwards;
 }
 
 footer {
   grid-area: footer;
   background-color: #242526;
-  box-shadow: 0 0 1px 0 #c6c6c6;
 }
 
 @media screen and (max-width: 450px) {
@@ -170,6 +312,18 @@ footer {
 }
 
 @media screen and (max-width: 450px) {
+  @keyframes bgMovement {
+    0% {
+      background-color: #DB4437;
+      width: 0px;
+    }
+  
+    100% {
+      background-color: #DB4437;
+      width: 130px;
+    }
+  }
+  
   .app {
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -194,18 +348,19 @@ footer {
     animation: openMenu 0.5s 1.7s ease forwards;
   }
 
-  aside {
+  section {
     width: 150px;
     height: 100%;
     position: fixed;
     left: -200px;
+    animation: none;
   }
 
-  aside:hover {
+  section:hover {
     left: 0;
   }
   
-  .app > button:focus ~ aside {
+  .app > button:focus ~ section {
     animation: openMenu 0.5s ease-in forwards;
   }
 }
