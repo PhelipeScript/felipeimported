@@ -100,10 +100,6 @@ header h1 {
   font-size: 2rem;
 }
 
-header h1 img {
-  width: 32px;
-}
-
 main {
   grid-area: main;
   background-color: #272727;
@@ -126,24 +122,6 @@ main h2 {
   gap: 15px;
   place-items: center;
   border-bottom: 1px solid #c6c6c6;
-}
-
-.successShoes {
-  display: flex;
-  width: 160px;
-  max-height: 200px;
-  padding: 2px;
-  border: 2px solid transparent;
-  border-radius: 4px;
-}
-
-.successShoes:hover {
-  border: 2px solid #8257E5;
-  transition: border .2s ease-in-out;
-}
-
-.successShoes img {
-  width: 100%;
 }
 
 @keyframes delaySection {
@@ -187,9 +165,20 @@ section > div > div {
   margin-bottom: 10px;
 }
 
+section > div > div > .felipeImported {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.felipeImported h2 {
+  font-size: 1rem;
+}
+
 section > div > div img {
   width: 32px;
-  align-self: start;
+  border-radius: 99999px;
 }
 
 section > div > div h2 {
@@ -358,6 +347,10 @@ footer {
 
   section:hover {
     left: 0;
+  }
+
+  .felipeImported h2 {
+    font-size: 0.865rem;
   }
   
   .app > button:focus ~ section {
