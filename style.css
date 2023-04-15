@@ -316,7 +316,7 @@ footer {
   .app > button {
     display: block;
     left: -200px;
-    margin-left: 10px;
+    margin-left: 20px;
     animation: openMenu 0.5s 1.7s ease forwards;
   }
 
