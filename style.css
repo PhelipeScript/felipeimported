@@ -106,24 +106,6 @@ main {
   box-shadow: 0 0 1px 0 #c6c6c6;
 }
 
-main h2 {
-  color: #8257E5;
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.successGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-  overflow: hidden;
-  height: 210px;
-  margin: 0 10px;
-  gap: 15px;
-  place-items: center;
-  border-bottom: 1px solid #c6c6c6;
-}
-
 @keyframes delaySection {
   0% {
     position: static;
@@ -334,6 +316,7 @@ footer {
   .app > button {
     display: block;
     left: -200px;
+    margin-left: 10px;
     animation: openMenu 0.5s 1.7s ease forwards;
   }
 
@@ -355,5 +338,13 @@ footer {
   
   .app > button:focus ~ section {
     animation: openMenu 0.5s ease-in forwards;
+  }
+
+  .logOutBG {
+    display: none;
+  }
+
+  .logOut:focus .logOutBG {
+    display: block;
   }
 }
