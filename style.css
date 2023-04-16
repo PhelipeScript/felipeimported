@@ -105,16 +105,64 @@ main {
   background-color: #272727;
   box-shadow: 0 0 1px 0 #c6c6c6;
   display: grid;
+  padding: 20px;
+}
+
+.allCategories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 650px);
+  gap: 20px;
+}
+
+.categoryProduct {
+  height: max-content;
+  max-width: 650px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 #c6c6c673;
+}
+
+.categoryProduct > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.categoryProduct > div:first-of-type h2, .categoryProduct > div:first-of-type a {
+  text-decoration: none;
+  color: #c6c6c5;
+}
+
+.categoryProduct > div:first-of-type a:hover {
+  text-decoration: underline;
+}
+
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  gap: 10px;
+  overflow: hidden;
+  height: 150px;
+}
+
+.miniGridProduct {
+  width: 150px;
+}
+
+.miniGridProduct img {
+  width: 100%;
+  border-radius: 6px;
 }
 
 #about {
-  margin-top: 2rem;
   justify-self: center;
-  max-width: 800px;
-  color: #c6c6c5;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 2rem;
+  max-width: 800px;
+  color: #c6c6c5;
 }
 
 @keyframes delaySection {
@@ -338,9 +386,13 @@ footer > div > a, #phone, #instagram {
   border-radius: 99999px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 87.5%;
+  }
+
+  .allCategories {
+    grid-template-columns: 1fr;
   }
 }
 
