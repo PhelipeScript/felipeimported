@@ -59,6 +59,77 @@ body {
   animation: rotateLogo 0.5s 1s linear forwards;
 }
 
+.welcome {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #000;
+  color: #c6c6c6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.welcome > main {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #24252686;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.welcome > main > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.welcome > main h1 {
+  font-size: 1rem;
+}
+
+.welcome > main img {
+  width: 42px;
+  border-radius: 99999px;
+}
+
+.welcome > main p {
+  font-size: 1.125rem;
+}
+
+.welcome a {
+  align-self: center;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #c6c6c6;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.welcome a:hover {
+  background-color: #6b37e4;
+  box-shadow: 0 0 0 1px #8257E5;
+}
+
+.welcome a button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-radius: 4px;
+}
+
 .app {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -84,7 +155,7 @@ body {
   height: 28px;
 }
 
-header {
+.app > header {
   grid-area: header;
   background-color: #242526;
   display: flex;
@@ -92,7 +163,7 @@ header {
   justify-content: center;
 }
 
-header h1 {
+.app > header h1 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -100,7 +171,7 @@ header h1 {
   font-size: 2rem;
 }
 
-main {
+.app > main {
   grid-area: main;
   background-color: #272727;
   box-shadow: 0 0 1px 0 #c6c6c6;
@@ -262,7 +333,7 @@ main {
   }
 }
 
-section {
+.app > section {
   grid-area: section;
   width: 200px;
   height: 100%;
@@ -281,12 +352,12 @@ section {
   }
 }
 
-section > div {
+.app > section > div {
   height: 100%;
   animation: delayDiv 0.5s 1.3s linear forwards;
 }
 
-section > div > div {
+.app > section > div > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,7 +365,7 @@ section > div > div {
   margin-bottom: 10px;
 }
 
-section > div > div > .felipeImported {
+.app > section > div > div > .felipeImported {
   align-self: start;
   display: flex;
   align-items: center;
@@ -305,48 +376,48 @@ section > div > div > .felipeImported {
   font-size: 1rem;
 }
 
-section > div > div img {
+.app > section > div > div img {
   width: 32px;
   border-radius: 99999px;
 }
 
-section > div > div h2 {
+.app > section > div > div h2 {
   color: #c6c6c6;
   font-size: 1.5rem;
   line-height: 140%;
 }
 
-section ul {
+.app > section ul {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 10px;
 }
 
-section ul li {
+.app > section ul li {
   box-shadow: 0 2px 0 0 #8257E5;
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
 }
 
-section ul li[data-active] {
+.app > section ul li[data-active] {
   box-shadow: 0 0 0 2px #8257E5;
   background-color: #8257E5;
 }
 
-section ul li:hover, section ul li:focus {
+.app > section ul li:hover, section ul li:focus {
   background-color: #8257E5;
   box-shadow: 0 0 0 2px #8257E5;
   transition: box-shadow 0.2s ease;
 }
 
-section ul li:active {
+.app > section ul li:active {
   background-color: #242526;
   box-shadow: 0 0 0 2px #242526;
 }
 
-section ul li a {
+.app > section ul li a {
   display: block;
   padding: 10px;
   width: 100%;
@@ -357,7 +428,7 @@ section ul li a {
   text-decoration: none;
 }
 
-section ul li a:hover {
+.app > section ul li a:hover {
   color: #fff;
 }
 
@@ -418,7 +489,7 @@ section ul li a:hover {
   animation: bgMovement 1s ease forwards;
 }
 
-footer {
+.app > footer {
   grid-area: footer;
   display: flex;
   flex-direction: column;
@@ -429,20 +500,20 @@ footer {
   border-top: 1px solid #c6c6c55d;
 }
 
-footer > div:first-of-type {
+.app > footer > div:first-of-type {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-footer > div:first-of-type > div {
+.app > footer > div:first-of-type > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
 
-footer > div + div {
+.app > footer > div + div {
   border-top: 1px solid #c6c6c642;
   padding-top: 7px;
   display: flex;
@@ -450,18 +521,18 @@ footer > div + div {
   justify-content: space-between;
 }
 
-footer a {
+.app > footer a {
   text-decoration: none;
   color: #c6c6c5;
 }
 
-footer a:hover {
+.app > footer a:hover {
   color: #fff;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 
-footer > div > a, #phone, #instagram {
+.app > footer > div > a, #phone, #instagram {
   display: flex;
   align-items: center;
   align-self: flex-start;
@@ -523,7 +594,7 @@ footer > div > a, #phone, #instagram {
     animation: openMenu 0.5s 1.7s ease forwards;
   }
 
-  section {
+  .app > section {
     width: 150px;
     height: 100%;
     position: fixed;
@@ -531,7 +602,7 @@ footer > div > a, #phone, #instagram {
     animation: none;
   }
 
-  section:hover {
+  .app > section:hover {
     left: 0;
   }
 
