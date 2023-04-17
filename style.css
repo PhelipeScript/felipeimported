@@ -110,13 +110,14 @@ main {
 
 .allCategories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 650px);
+  grid-template-columns: repeat(auto-fit, 520px);
   gap: 20px;
+  border-bottom: 1px solid #c6c6c63d;
 }
 
 .categoryProduct {
   height: max-content;
-  max-width: 650px;
+  max-width: 490px;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0 1px 0 #c6c6c673;
@@ -146,13 +147,100 @@ main {
   height: 150px;
 }
 
-.miniGridProduct {
+.miniGrid img {
   width: 150px;
+  border-radius: 6px;
 }
 
-.miniGridProduct img {
-  width: 100%;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 175px);  
+  gap: 20px;
+}
+
+.productCard {
+  position: relative;
+  width: 180px;
+  height: auto;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 0 3px 3px #242526;
   border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.productCard::before {
+  content: "Compre 2 leve 3";
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 45px;
+  height: 45px;
+  padding: 5px;
+  border-radius: 99999px;
+  background-color: #8257e5f1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.865rem;
+  color: #c6c6c6;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 1px #c6c6c5;
+}
+
+.productCard > img {
+  width: 100%;
+  max-height: 170px;
+  object-fit: contain;
+  border-radius: 6px;
+  border-bottom: 1px solid #c6c6c51c;
+}
+
+.productCard h2 {
+  color: #c6c6c6;
+  font-size: 1.325rem;
+  text-align: center;
+}
+
+.productCard > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c6c6c6;
+  font-size: 1.125rem;
+  height: 28px;
+}
+
+.productCard > div > span:first-of-type {
+  align-self: flex-start;
+  text-decoration: line-through;
+  opacity: 0.6;
+  font-size: 1rem;
+}
+
+.productCard > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #090;
+  width: 100%;
+  height: 50px;
+  border-radius: 0 0 6px 6px;
+  border-top: 1px solid #090;
+}
+
+.productCard > a:hover {
+  border-top: 1px solid #0f0;
 }
 
 #about {
@@ -338,6 +426,7 @@ footer {
   padding: 10px;
   background-color: #242526;
   color: #c6c6c5;
+  border-top: 1px solid #c6c6c55d;
 }
 
 footer > div:first-of-type {
