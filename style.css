@@ -577,7 +577,6 @@ footer > div > a, #phone, #instagram {
   .grid {
     grid-template-columns: repeat(auto-fit, 145px);  
     justify-content: center;
-    border: 1px solid red;
   }
 
   .productCard {
