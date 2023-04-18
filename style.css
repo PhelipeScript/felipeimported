@@ -575,11 +575,13 @@ footer > div > a, #phone, #instagram {
   }
 
   .grid {
-    grid-template-columns: repeat(auto-fit, 150px);  
+    grid-template-columns: repeat(auto-fit, 145px);  
+    justify-content: center;
+    border: 1px solid red;
   }
 
   .productCard {
-    width: 155px;
+    width: 145px;
   }
 
   .productCard::before {
