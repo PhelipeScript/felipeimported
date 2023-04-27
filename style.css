@@ -137,6 +137,7 @@ body {
   'section main'
   'section footer';
   width: 100vw;
+  max-width: 100%;
   min-height: 100vh;  
 }
 
@@ -174,49 +175,6 @@ body {
   background-color: var(--gray-800);
   display: grid;
   padding: 20px;
-}
-
-.allCategories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 520px);
-  gap: 20px;
-}
-
-.categoryProduct {
-  height: max-content;
-  max-width: 490px;
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 0 1px 0 #c6c6c652;
-}
-
-.categoryProduct > div:first-of-type {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.categoryProduct > div:first-of-type h2, .categoryProduct > div:first-of-type a {
-  text-decoration: none;
-  color: var(--gray-100);
-}
-
-.categoryProduct > div:first-of-type a:hover {
-  text-decoration: underline;
-}
-
-.miniGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 150px);
-  gap: 10px;
-  overflow: hidden;
-  height: 150px;
-}
-
-.miniGrid img {
-  width: 150px;
-  border-radius: 6px;
 }
 
 .grid {
@@ -308,6 +266,12 @@ body {
   height: 50px;
   border-radius: 0 0 6px 6px;
   border-top: 1px solid #090;
+  transition: all 0.2s ease;
+}
+
+.productCard > a:hover {
+  background-color: #050;
+  color: var(--gray-100);
 }
 
 #about {
@@ -539,10 +503,6 @@ footer > div > a, #phone, #instagram {
 @media screen and (max-width: 768px) {
   html {
     font-size: 87.5%;
-  }
-
-  .allCategories {
-    grid-template-columns: 1fr;
   }
 }
 
